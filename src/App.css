@@ -1,3 +1,24 @@
+
+.light, .dark {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
+.light {
+  background-image: url(./assets/media/day.jpg);
+}
+
+.dark {
+  background-image: url(./assets/media/night.jpg);
+}
+
 .logo {
   height: 8em;
   padding: 1.5em;
