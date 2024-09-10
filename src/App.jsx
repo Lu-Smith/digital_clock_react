@@ -1,8 +1,8 @@
-import React, { createContext, useEffect, useState } from 'react'
-import './App.css'
-import DigitalClock from './assets/DigitalClock'
-import Footer from './assets/Footer'
-import MoonSun from './assets/MoonSun'
+import React, { createContext, useEffect, useState } from 'react';
+import './App.css';
+import DigitalClock from './assets/DigitalClock';
+import Footer from './assets/Footer';
+import MoonSun from './assets/MoonSun';
 
 export const UserContext = createContext()
 
@@ -14,11 +14,11 @@ function App() {
 
   useEffect(() => {
     setDayLight(d => d = meridumSun > 5 && meridumSun < 18 ? true : false);
-  }, [meridumSun])
+  }, [meridumSun]);
 
 
   return (
-    <div className={`dayLight ? light : dark`}>
+    <div className={dayLight ? "light" : "dark"}>
       <UserContext.Provider value={dayLight}>
         <MoonSun />
       </UserContext.Provider>
@@ -28,4 +28,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
