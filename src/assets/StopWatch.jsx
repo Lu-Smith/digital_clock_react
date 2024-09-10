@@ -9,10 +9,15 @@ function StopWatch() {
 
     useEffect(() => {
         if(isRunning) {
-            setInterval(() => {
+            intervalIdRef.current = setInterval(() => {
                 setElapsedTime(Date.now() - startTimeRef.current);
             },10);
         }
+
+        return ()=> {
+            clearInterval(intervalIdRef.current);
+        }
+
     },[isRunning]);
 
     function start(){
@@ -30,6 +35,12 @@ function StopWatch() {
     }
 
     function formatTime() {
+
+        let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+        let minutes = Math.floor(elapsedTime / (1000 * 60) % 60);
+        let seconds = Math.floor(elapsedTime / (1000) % 60);
+        let milliseconds = Math.floor(elapsedTime / 1000);
+
         return `00:00:00`;
     }
 
