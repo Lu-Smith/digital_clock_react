@@ -3,6 +3,7 @@ import './App.css';
 import DigitalClock from './assets/DigitalClock';
 import Footer from './assets/Footer';
 import MoonSun from './assets/MoonSun';
+import StopWatch from './assets/StopWatch';
 
 export const UserContext = createContext()
 
@@ -23,6 +24,7 @@ function App() {
         <MoonSun />
       </UserContext.Provider>
       <DigitalClock />
+      <StopWatch />
       <Footer />
     </div>
   )
