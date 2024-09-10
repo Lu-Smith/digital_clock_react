@@ -70,3 +70,9 @@ h1 {
     color: #747bff;
   }
 }
+
+@media screen and (max-width: 786px) {
+  h1 {
+    font-size: 3.5em;
+  }
+}
