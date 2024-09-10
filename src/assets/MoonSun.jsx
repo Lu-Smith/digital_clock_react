@@ -1,21 +1,22 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import sunDark from './media/sunClock.png';
 import sunLight from './media/sunClockLight.png';
 import moon from './media/moonClock.png';
+import { UserContext } from '../App';
 
 function MoonSun() {
   
   const [sun, setSun] = useState(sunLight);
-  const meridumSun = new Date().getHours();
-  const dayLight = meridumSun > 5 && meridumSun < 18 ? true : false;
 
+  const dayLight = useContext(UserContext);
+ 
   useEffect(() => {
     if (!dayLight) {
       setSun(s => s = sunDark);
     } else {
       setSun(s => s = sunLight);
     } 
-  },[meridumSun])
+  },[dayLight])
 
     return (
       <div className="moon-sun-container">
