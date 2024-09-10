@@ -1,6 +1,12 @@
+import React, {useState, useEffect} from "react";
+
 function DigitalClock() {
     return (
-        <h1>Hello World</h1>
+        <div className="clock-container">
+            <div className="clock">
+                <h1>00:00:00</h1>
+            </div>
+        </div>
     )
 }
 
